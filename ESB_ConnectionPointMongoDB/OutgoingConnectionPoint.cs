@@ -42,7 +42,6 @@ namespace ESB_ConnectionPointMongoDB
         public void Initialize()
         {
             Client = ConnectionDB();
-            Timer();
         }
 
         private void ParseSettings(string jsonSettings)
@@ -266,6 +265,7 @@ namespace ESB_ConnectionPointMongoDB
 
                     if (!(message == (Message)null) && !this.messagesInProcessing.Contains(message.Id) )
                     {
+                        Timer();
                         if (this.countThread > 1)
                             Task.Factory.StartNew((Action)(() => this.ProcessMessage(message, messageSource, replyHandler, ct)));
                         else
