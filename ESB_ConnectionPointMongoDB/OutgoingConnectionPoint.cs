@@ -17,7 +17,7 @@ using System.Globalization;
 
 namespace ESB_ConnectionPointMongoDB
 {
-    public class OutgoingConnectionPoint : IDecoratedOutgoingConnectionPoint, IStandartOutgoingConnectionPoint, IOutgoingConnectionPoint, IConnectionPoint, IDisposable
+    public class OutgoingConnectionPoint : IDecoratedOutgoingConnectionPoint
     {
         private string connectionSettings;
         private string login;
@@ -266,10 +266,12 @@ namespace ESB_ConnectionPointMongoDB
                     if (!(message == (Message)null) && !this.messagesInProcessing.Contains(message.Id) )
                     {
                         Timer();
-                        if (this.countThread > 1)
+                        if (this.countThread > 1 && this.countThread < this.messagesInProcessing.Count)
                             Task.Factory.StartNew((Action)(() => this.ProcessMessage(message, messageSource, replyHandler, ct)));
-                        else
+                        else if (this.countThread <= 1)
                             this.ProcessMessage(message, messageSource, replyHandler, ct);
+                        else
+                            AbandonPeeklock(mainLogger, messageSource, message, "Все потоки заняты " + messagesInProcessing.Count );
                     }
                 }
                 ct.WaitHandle.WaitOne(10);
