@@ -1,0 +1,241 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "connectionSettings": "",
+            "login": "",
+            "password": "",
+            "threadCount": 1,
+            "isDebug": false,
+            "dbName": "",
+            "Requests": [
+                {
+                    "collectionName": "notSorted",
+                    "isDebugMode": false,
+                    "name": "unknown",
+                    "classId": "",
+                    "replyClassId": "555",
+                    "dayDataStorage": 30,
+                    "delay": 0,
+                    "needSendResult": false
+                }
+            ]
+        }
+    ],
+    "required": [
+        "connectionSettings",
+        "login",
+        "password",
+        "threadCount",
+        "isDebug",
+        "dbName",
+        "Requests"
+    ],
+    "properties": {
+        "connectionSettings": {
+            "$id": "#/properties/connectionSettings",
+            "type": "string",
+            "title": "The connectionSettings schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "login": {
+            "$id": "#/properties/login",
+            "type": "string",
+            "title": "The login schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "password": {
+            "$id": "#/properties/password",
+            "type": "string",
+            "title": "The password schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "threadCount": {
+            "$id": "#/properties/threadCount",
+            "type": "integer",
+            "title": "The threadCount schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                1
+            ]
+        },
+        "isDebug": {
+            "$id": "#/properties/isDebug",
+            "type": "boolean",
+            "title": "The isDebug schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                false
+            ]
+        },
+        "dbName": {
+            "$id": "#/properties/dbName",
+            "type": "string",
+            "title": "The dbName schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "Requests": {
+            "$id": "#/properties/Requests",
+            "type": "array",
+            "title": "The Requests schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "collectionName": "notSorted",
+                        "isDebugMode": false,
+                        "name": "unknown",
+                        "classId": "",
+                        "replyClassId": "555",
+                        "dayDataStorage": 30,
+                        "delay": 0,
+                        "needSendResult": false
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/Requests/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/Requests/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "collectionName": "notSorted",
+                                "isDebugMode": false,
+                                "name": "unknown",
+                                "classId": "",
+                                "replyClassId": "555",
+                                "dayDataStorage": 30,
+                                "delay": 0,
+                                "needSendResult": false
+                            }
+                        ],
+                        "required": [
+                            "collectionName",
+                            "isDebugMode",
+                            "name",
+                            "classId",
+                            "replyClassId",
+                            "dayDataStorage",
+                            "delay",
+                            "needSendResult"
+                        ],
+                        "properties": {
+                            "collectionName": {
+                                "$id": "#/properties/Requests/items/anyOf/0/properties/collectionName",
+                                "type": "string",
+                                "title": "The collectionName schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "notSorted"
+                                ]
+                            },
+                            "isDebugMode": {
+                                "$id": "#/properties/Requests/items/anyOf/0/properties/isDebugMode",
+                                "type": "boolean",
+                                "title": "The isDebugMode schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": false,
+                                "examples": [
+                                    false
+                                ]
+                            },
+                            "name": {
+                                "$id": "#/properties/Requests/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "The name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "unknown"
+                                ]
+                            },
+                            "classId": {
+                                "$id": "#/properties/Requests/items/anyOf/0/properties/classId",
+                                "type": "string",
+                                "title": "The classId schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    ""
+                                ]
+                            },
+                            "replyClassId": {
+                                "$id": "#/properties/Requests/items/anyOf/0/properties/replyClassId",
+                                "type": "string",
+                                "title": "The replyClassId schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "555"
+                                ]
+                            },
+                            "dayDataStorage": {
+                                "$id": "#/properties/Requests/items/anyOf/0/properties/dayDataStorage",
+                                "type": "integer",
+                                "title": "The dayDataStorage schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    30
+                                ]
+                            },
+                            "delay": {
+                                "$id": "#/properties/Requests/items/anyOf/0/properties/delay",
+                                "type": "integer",
+                                "title": "The delay schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    0
+                                ]
+                            },
+                            "needSendResult": {
+                                "$id": "#/properties/Requests/items/anyOf/0/properties/needSendResult",
+                                "type": "boolean",
+                                "title": "The needSendResult schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": false,
+                                "examples": [
+                                    false
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}
